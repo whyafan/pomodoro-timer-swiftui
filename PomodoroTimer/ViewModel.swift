@@ -53,16 +53,17 @@ extension ContentView {
         }
         
         func update() {
-            guard isActive else {return}
+            guard isActive else { return }
             
             let now = Date()
+        
             
             // Using the Epoch times to subtract the milliseconds between both dates from now to the initial endDate
             let diff = endDate.timeIntervalSince1970 - now.timeIntervalSince1970
             
             if diff <= 0 {
                 self.isActive = false
-                self.time = "00:00"
+                self.time = "0:00"
                 self.showingAlert = true
             }
             
