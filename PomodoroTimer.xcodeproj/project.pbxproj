@@ -35,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E05F2B412B21BAD7003A6285 /* todo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = todo.md; sourceTree = "<group>"; };
+		E05F2B442B21D215003A6285 /* notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = notes.md; sourceTree = "<group>"; };
+		E05F2B472B21D259003A6285 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E07650E82B219DF4006BE7A6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E08B87A82B21965D00F17703 /* PomodoroTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08B87AB2B21965D00F17703 /* PomodoroTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerApp.swift; sourceTree = "<group>"; };
@@ -77,6 +80,9 @@
 		E08B879F2B21965D00F17703 = {
 			isa = PBXGroup;
 			children = (
+				E05F2B472B21D259003A6285 /* README.md */,
+				E05F2B412B21BAD7003A6285 /* todo.md */,
+				E05F2B442B21D215003A6285 /* notes.md */,
 				E08B87AA2B21965D00F17703 /* PomodoroTimer */,
 				E08B87BC2B21965E00F17703 /* PomodoroTimerTests */,
 				E08B87C62B21965E00F17703 /* PomodoroTimerUITests */,
