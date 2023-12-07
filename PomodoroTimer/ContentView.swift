@@ -18,9 +18,10 @@ struct ContentView: View {
         VStack (alignment: .center) {
                 // Used to add the background
                 Spacer()
-                    Text("\(vm.time)")
+                    Text("\(vm.time)").font(.system(size: 95))
                         .font(.system(size: 70, weight: .medium, design: .rounded))
                         .padding()
+                        .foregroundColor(.white)
                         .frame(width: 1000, alignment: .center)
                         // Deliver an alert when the timer ends and set/use the showingAlert boolean value from the ViewModel
                         .alert("Timer completed!", isPresented: $vm.showingAlert) {
@@ -29,8 +30,8 @@ struct ContentView: View {
                         }
             
             VStack (alignment: .center) {
-                Text("Use the slider below to set the timer")
-                Slider(value: $vm.minutes, in: 1...90, step: 1).padding([.leading, .trailing], 50).padding([.top, .bottom], 10).disabled(vm.isActive).animation(.easeInOut, value: vm.minutes)
+                Text("Use the slider below to set the timer").foregroundColor(.white)
+                Slider(value: $vm.minutes, in: 1...25, step: 1).padding([.leading, .trailing], 50).padding([.top, .bottom], 10).disabled(vm.isActive).animation(.easeInOut, value: vm.minutes)
                 
                 HStack (spacing: 50) {
                     Button("Start Timer") {
@@ -40,9 +41,9 @@ struct ContentView: View {
                     Button("Reset Timer") {
                         vm.reset()
                     }.tint(Color.red)
-                    
-                    Text("\(Date())")
                 }
+                
+                Text("Made with ❤️ by Afan Khan").padding([.top], 120).foregroundColor(.white).fontWeight(.medium).fontDesign(.rounded)
             }.padding([.top], 10)
             
                 // Used to add the background

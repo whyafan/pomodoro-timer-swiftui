@@ -5,8 +5,6 @@
 //  Created by Afan Khan on 07/12/23.
 //
 
-/* Adding Notification is left */
-
 import Foundation
 import UserNotifications
 
@@ -29,7 +27,7 @@ extension ContentView {
         }
         
         // Keeping track of the current time of the Application
-        private var initialTime = 0
+        private var initialTime = 1
         private var endDate = Date()
         
         // Starts the timer with the given minutes
@@ -56,7 +54,6 @@ extension ContentView {
             guard isActive else { return }
             
             let now = Date()
-        
             
             // Using the Epoch times to subtract the milliseconds between both dates from now to the initial endDate
             let diff = endDate.timeIntervalSince1970 - now.timeIntervalSince1970
@@ -67,25 +64,27 @@ extension ContentView {
                 self.showingAlert = true
             }
             
-            // Converting the data into a readable format for the user
+            /* Converting the data into a readable format for the user */
             
             // Takes the diff and puts them into the Epoch milliseconds format
             let date = Date(timeIntervalSince1970: diff)
-            let calendar = Calendar.current
-            
-            // Grabbing minutes from Epoch date
-            let minutes = calendar.component(.minute, from: date)
-            
-            // Grabbing seconds from Epoch date
-            let seconds = calendar.component(.second, from: date)
             
             // Keep track of remaining minutes
             self.minutes = Float(minutes)
             
             /* Formatting time */
             
-            // format: %d represents date, and %02d represents two decimal points
-            self.time = String(format: "%d:%02d", minutes, seconds)
+            func formatTime(date: Date) -> String {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "mm:ss"
+                formatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+                
+                let formattedDate = formatter.string(from: date)
+                
+                return formattedDate
+            }
+            
+            self.time = formatTime(date: date)
             
         }
     }
